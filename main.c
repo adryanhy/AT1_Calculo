@@ -3,8 +3,8 @@
 #include <stdlib.h>
 #define PI 3.14159265 //Constante de Pi
 
-                        /* ATIVIDADE 1 - CALCULO - ADS */
-                /* Adryan, Bruno Ricardo, Luana, Lucas e Higor */
+                                /* ATIVIDADE 1 - CALCULO - ADS */
+/* INTEGRANTES:  Adryan Andre, Bruno Ricardo, Luana S. Ribeiro, Lucas Araujo e Higor Gonçalves */
 int main() {
     int op;
     float resultado, num, resultadoInvalido;
@@ -26,7 +26,7 @@ int main() {
             printf("Insira o valor do seno(x): ");
             scanf("%f", &num);
             resultado = sin(num);
-            printf("Resultado do seno (x): %.4f radianos", resultado);
+            printf("Resultado do seno (x): %.4f ", resultado);
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&op);
             system("cls");
@@ -44,7 +44,7 @@ int main() {
             printf("Insira o valor de (x): ");
             scanf("%f", &num);
             resultado = cos(num);
-            printf("Resultado do cosseno de (%.2f): %.4f radianos", num, resultado);
+            printf("Resultado do cosseno de (%.2f): %.4f", num, resultado);
             printf("\n6. Voltar ao menu principal:\n\n");
             scanf("%d",&op);
             if(op == 6)
@@ -54,26 +54,26 @@ int main() {
             }
             break;
 
-            case 3:
-                system("cls");
-                printf("Calculo de Tangente\n");
-                printf("Insira o valor do angulo(x): ");
-                scanf("%lf", &x);
-                resultadoInvalido = fmod(x, 90);    //fmod pega o resto da divisão por float
+        case 3:
+            system("cls");
+            printf("Calculo de Tangente\n");
+            printf("Insira o valor do angulo(x): ");
+            scanf("%lf", &x);
+            //x = (M_PI/2);
+            if (cos (x) >= (-1e-15) && cos (x) <= (1e-15)){
+                printf("Resultado Invalido");
+            } else{
                 resultado = tan(x);
-                if (resultado == resultadoInvalido){
-                    printf("Resultado Invalido");
-                } else{
-                printf("%.4lf radianos", resultado);
-                }
-                printf("\n6. Voltar ao menu principal:\n\n");
-                scanf("%d",&op);
-                if(op == 6)
-                {
-                    system("cls");
-                    return main ();
-                }
-                break;
+                printf("%.4lf", resultado);
+            }
+            printf("\n6. Voltar ao menu principal:\n\n");
+            scanf("%d",&op);
+            if(op == 6)
+            {
+                system("cls");
+                return main ();
+            }
+            break;
 
         case 4:
             system("cls");
